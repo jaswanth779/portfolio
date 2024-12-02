@@ -76,7 +76,7 @@ header {
 }
 
 .profile-image {
-  width: 300px;
+  width: 400px;
   height: 450px;
   margin-right: 40px;
   border-radius: 5%;
@@ -329,4 +329,69 @@ Experience-heading{
 #Experience{
     background-color: #f0f0f0;
 }
+#Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Adjusts the space from the top */
+}
+
+#Contact p {
+  font-size: 24px;
+  margin-bottom: 20px; /* Space between paragraph and heading */
+}
+
+#Contact h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #0e0e0e; /* Dark text color */
+}
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+  font-weight: bold;
+  color: rgb(10, 10, 10); 
+  
+}
+.contact-icon {
+  cursor: default;
+  height: 2.5rem;
+  font-size: 24px;
+}
+/* FOOTER SECTION */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+
+
+
 

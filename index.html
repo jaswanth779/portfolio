@@ -18,7 +18,7 @@
       <li><a href="#profile" id="profile-link">Profile</a></li>
       <li><a href="#about" id="about-link">About</a></li>
       <li><a href="#Experience" id="Experience-link">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#Contact" id="Contact-link">Contact</a></li>
     </ul> 
   </header>
 
@@ -33,8 +33,9 @@
       <h1 class="name-heading">SARAPATI JASWANTH</h1>
       <p class="job-paragraph">Business Operations Associate</p>
       <div class="buttons">
-        <button class="button">Download CV</button>
-        <button class="button">Contact Info</button>
+        <!-- Link to download CV (Document) -->
+        <a href="static/cv.docx" download class="button">Download CV</a>
+        <a href="#Contact" class="button">Contact Info</a>
       </div>
     </div>
   </section>
@@ -165,6 +166,26 @@
       </div>
     </div>
   </section>
+  <section id="Contact">
+    <p>Get In Touch</p>
+    <h1>CONTACT ME</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <i class="fas fa-envelope contact-icon"></i> 
+        <p><a href="mailto:jaswantsamuel777@gmail.com">jaswantsamuel777@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <i class="fab fa-linkedin contact-icon"></i>
+        <p><a href="https://www.linkedin.com/in/jaswanth-samuel-867bb0233/">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot-sec">
+    
+    <p>Copyright © 2024 JASWANTH. All Rights Reserved.</p>
+  </footer>
+
 
   
 
@@ -173,10 +194,12 @@
     const aboutLink = document.getElementById("about-link");
     const profileLink = document.getElementById("profile-link");
     const ExperienceLink = document.getElementById("Experience-link");
+    const ContactLink = document.getElementById("Contact-link");
     const header = document.getElementById("header");
     const aboutSection = document.getElementById("about");
     const profileSection = document.getElementById("profile");
     const ExperienceSection = document.getElementById("Experience");
+    const ContactSection = document.getElementById("Contact");
 
 
     // When clicking on About section
@@ -200,6 +223,13 @@
       event.preventDefault(); // Prevent default anchor behavior
       window.scrollTo({
         top: ExperienceSection.offsetTop - header.offsetHeight,
+        behavior: 'smooth'
+      });
+    });
+    Contactlink.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      window.scrollTo({
+        top: ContactSection.offsetTop - header.offsetHeight,
         behavior: 'smooth'
       });
     });
