@@ -1,0 +1,332 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #1abc9c;
+}
+
+/* Profile Section */
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;;
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 80px; /* To prevent overlap with the header */
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.profile-image {
+  width: 300px;
+  height: 450px;
+  margin-right: 40px;
+  border-radius: 5%;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.hello-paragraph {
+  font-size: 18px;
+  color: #0e0d0d;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.name-heading {
+  font-size: 35px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #0f0f0f;
+}
+
+.job-paragraph {
+  font-size: 18px;
+  color: #0e0d0d;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 50px;
+  font-size: 16px;
+  color: rgb(14, 14, 14);
+  background-color: #f6f8f7;
+  border: 3px solid #090909;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #16a085;
+}
+
+/* About Section */
+#about {
+  background-color: #fff;
+  padding: 50px;
+  color: #333;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.get-to-know {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about-heading {
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Ensure sections have enough space to be scrollable */
+section {
+  padding: 80px 20px; /* Ensure space between header and content */
+}
+
+/* Main container for image and text side by side */
+.about-content-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between the image and the text containers */
+  padding: 20px; /* Optional padding */
+}
+
+/* Styling for the image container */
+.about-image-container {
+  flex: 1; /* Allow the image container to take some space */
+  display: flex; /* Ensure the image is centered in its container */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; 
+  margin-right:120px;
+  width:300px/* Center the image vertically */
+}
+
+/* Styling for the image itself */
+.about-image {
+  width: 300px;
+  height: 400px;
+  border-radius: 10%;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Container holding the two side-by-side text boxes */
+.about-text-container {
+  flex: 2; /* Allow more space for the text containers */
+  display: flex; /* Make text boxes side by side */
+  gap: 40px; /* Space between the text boxes */
+  width: 700px;
+  height: 150px;
+}
+
+/* Individual text box styling */
+.about-text-box {
+  background-color: white; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 25px; /* Internal spacing inside the box */
+  text-align: center; /* Center the content */
+  flex: 1; /* Ensures both boxes are of equal size */
+  border: 2px solid black;
+}
+
+/* Styling for the experience icon */
+.experience-icon {
+    font-size: 30px;
+    color: #080808; /* Green color */
+}
+
+/* Styling for the experience text */
+.experience-text {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0e0e0e; /* Dark text color */
+}
+
+/* Styling the additional information */
+.additional-info {
+    font-size: 16px;
+    color: #0d0d0d;
+    line-height: 2.0;
+    font-weight: bold;
+}
+
+.education-icon {
+  font-size: 40px;
+  color: #080808; /* Green color */
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  
+}
+
+.education-text {
+  margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #0e0e0e; /* Dark text color */
+}
+
+/* Paragraph below text containers and beside the image */
+.about-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  flex: 2;
+  margin-top: 20px;
+  text-align: left; /* Ensure left alignment for paragraph */
+}
+.experince-container{
+    padding:30px
+}
+Experience-heading{
+    font-size: 40px;
+}
+.experience-para{
+    padding-left:50px
+}
+.skill-heading{
+    text-align:center;
+    margin-bottom:25px
+}
+.skill-para{
+    text-align:center;
+    font-size: 30px;
+}
+.Front-end-skills{
+    display: flex;
+    height: 300px;
+    width: 500px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:rgb(11, 11, 11);
+    
+    flex-direction: column;
+    
+    margin-right: 65px;
+    justify-content: center;
+   
+ 
+}
+.kjgs{
+  display: flex;
+  flex-direction: row;
+  padding-left:45px;
+  padding-right:45px;
+  justify-content: space-around;
+  padding-top:20px
+}
+.Data-analytical-skils{
+    display: flex;
+    height: 300px;
+    width: 400px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:yellow;
+    min-width:150px;
+    flex-direction: column;
+    width:300px;
+    justify-content: space-between;
+   
+}
+.skills-contaier{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+
+}
+.front-end-heading{
+   font-size:25px;
+   text-align:center;
+  
+}
+#Experience{
+    background-color: #f0f0f0;
+}
+
