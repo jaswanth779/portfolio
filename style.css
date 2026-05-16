@@ -73,6 +73,59 @@ header {
   justify-content: center;
   flex: 1;
   padding: 20px;
+  
+  /* ========== ADD THESE ANIMATION STYLES ========== */
+  animation: floatAnimation 3s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+  position: relative;
+}
+
+/* Floating up-down animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Soft glow/shadow pulse animation */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 15px 30px rgba(26, 188, 156, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* Optional: shine effect that moves across on hover */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  border-radius: 5%;
+}
+
+.image-container:hover::before {
+  left: 100%;
+}
+
+/* Hover effect - intensify animation */
+.image-container:hover {
+  animation: floatAnimation 2s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
 }
 
 .profile-image {
@@ -183,8 +236,61 @@ section {
   display: flex; /* Ensure the image is centered in its container */
   justify-content: center; /* Center the image horizontally */
   align-items: center; 
-  margin-right:120px;
-  width:400px/* Center the image vertically */
+  margin-right: 120px;
+  width: 400px; /* Center the image vertically */
+  
+  /* ========== ADD THESE ANIMATION STYLES (SAME AS PROFILE IMAGE) ========== */
+  animation: floatAnimation 3s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+  position: relative;
+}
+
+/* Floating up-down animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Soft glow/shadow pulse animation */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 15px 30px rgba(26, 188, 156, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* Shine effect that moves across on hover */
+.about-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  border-radius: 10%;
+}
+
+.about-image-container:hover::before {
+  left: 100%;
+}
+
+/* Hover effect - intensify animation */
+.about-image-container:hover {
+  animation: floatAnimation 2s ease-in-out infinite, glowPulse 2s ease-in-out infinite;
 }
 
 /* Styling for the image itself */
@@ -196,14 +302,167 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Container holding the two side-by-side text boxes */
 .about-text-container {
   flex: 2; /* Allow more space for the text containers */
   display: flex; /* Make text boxes side by side */
   gap: 40px; /* Space between the text boxes */
   width: 700px;
   height: 150px;
+  
+  /* ========== ADD THESE ANIMATION STYLES ========== */
+  animation: slideInUp 0.8s ease-out, containerPulse 4s ease-in-out infinite;
 }
+
+/* Slide in animation when page loads */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle container pulse animation */
+@keyframes containerPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Individual text box styling with hover effects */
+.about-text-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  flex: 1;
+  border: 2px solid black;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: fadeInScale 0.6s ease-out backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Staggered animation for each text box */
+.about-text-container .about-text-box:first-child {
+  animation-delay: 0.1s;
+}
+
+.about-text-container .about-text-box:last-child {
+  animation-delay: 0.3s;
+}
+
+/* Fade in with scale animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced hover effect for text boxes */
+.about-text-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(26, 188, 156, 0.25);
+  border-color: #1abc9c;
+}
+
+/* Shine effect on hover */
+.about-text-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+
+.about-text-box:hover::before {
+  left: 60%;
+}
+
+/* Icon bounce animation on hover */
+.about-text-box:hover .experience-icon i,
+.about-text-box:hover .education-icon i {
+  animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Text fade in animation for content */
+.experience-text, .education-text, .additional-info {
+  animation: textFadeIn 0.5s ease-out backwards;
+}
+
+.experience-text {
+  animation-delay: 0.2s;
+}
+
+.additional-info {
+  animation-delay: 0.3s;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Optional: Subtle border glow animation on load */
+@keyframes borderGlow {
+  0% {
+    border-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    border-color: #1abc9c;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.2);
+  }
+  100% {
+    border-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Apply border glow animation on page load (optional - uncomment if desired) */
+/* .about-text-box {
+  animation: fadeInScale 0.6s ease-out backwards, borderGlow 2s ease-out;
+} */
 
 /* Individual text box styling */
 .about-text-box {
@@ -281,21 +540,173 @@ Experience-heading{
     text-align:center;
     font-size: 30px;
 }
-.Front-end-skills{
-    display: flex;
-    height: 300px;
-    width: 500px;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 10px;
-    border-color:rgb(11, 11, 11);
-    
-    flex-direction: column;
-    
-    margin-right: 65px;
-    justify-content: center;
-   
- 
+.Front-end-skills {
+  display: flex;
+  height: 300px;
+  width: 500px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(11, 11, 11);
+  flex-direction: column;
+  margin-right: 65px;
+  justify-content: center;
+  
+  /* ========== ADD THESE ANIMATION STYLES ========== */
+  background: white;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: fadeInUp 0.8s ease-out backwards, borderGlow 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Staggered animation for skill cards */
+.skills-contaier .Front-end-skills:first-child {
+  animation-delay: 0.1s;
+}
+
+.skills-contaier .Front-end-skills:last-child {
+  animation-delay: 0.3s;
+}
+
+/* Fade in from bottom animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle border color pulse animation */
+@keyframes borderGlow {
+  0% {
+    border-color: rgb(11, 11, 11);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    border-color: #1abc9c;
+    box-shadow: 0 8px 25px rgba(26, 188, 156, 0.25);
+  }
+  100% {
+    border-color: rgb(11, 11, 11);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Enhanced hover effect */
+.Front-end-skills:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: #1abc9c;
+  box-shadow: 0 25px 40px rgba(26, 188, 156, 0.3);
+  animation: none; /* Stops border pulse on hover for cleaner effect */
+}
+
+/* Shine effect that moves across on hover */
+.Front-end-skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.Front-end-skills:hover::before {
+  left: 100%;
+}
+
+/* Heading animation inside the card */
+.front-end-heading {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  animation: headingSlideIn 0.6s ease-out backwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes headingSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Individual skill items animation */
+.kjgs div {
+  animation: skillFadeIn 0.5s ease-out backwards;
+  transition: all 0.3s ease;
+}
+
+.kjgs div:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.kjgs div:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effect for individual skill items */
+.kjgs div:hover {
+  transform: translateX(8px);
+}
+
+.kjgs div:hover .fa-circle-check {
+  animation: checkBounce 0.4s ease;
+}
+
+@keyframes checkBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+    color: #1abc9c;
+  }
+}
+
+/* Pulse animation on icons */
+.fa-circle-check {
+  transition: all 0.3s ease;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    color: #1abc9c;
+  }
 }
 .kjgs{
   display: flex;
